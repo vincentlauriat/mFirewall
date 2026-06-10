@@ -472,8 +472,8 @@ bail:
             //add path
             if(nil != process.path)
             {
-                //add
-                [rules.rules[process.key][KEY_PATHS] addObject:process.path];
+                //add (synchronized accessor)
+                [rules addPath:process.path forKey:process.key];
             }
         }
         
@@ -675,7 +675,7 @@ bail:
                 [self alert:(NEFilterSocketFlow*)flow process:process csChange:csChange];
             }
             //other rules for this process?
-            else if(0 != [rules.rules[process.key][KEY_RULES] count])
+            else if(0 != [rules ruleCountForKey:process.key])
             {
                 //dbg msg
                 os_log_debug(logHandle, "while signed by apple, %d/%{public}@ has other (non-matching) rules, so will alert", process.pid, process.binary.name);

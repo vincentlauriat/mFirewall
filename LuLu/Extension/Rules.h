@@ -69,6 +69,12 @@
 // and also the cs info of all its rule
 -(void)updateCSInfo:(Process*)process;
 
+//number of rules for a given key
+-(NSUInteger)ruleCountForKey:(NSString*)key;
+
+//add an (external) path to an item's paths
+-(void)addPath:(NSString*)path forKey:(NSString*)key;
+
 //cleanup rules
 -(NSUInteger)cleanup:(BOOL)full;
 

@@ -640,7 +640,29 @@ bail:
             rule.csInfo = process.csInfo;
         }
     }
-    
+
+    return;
+}
+
+//number of rules for a given key
+-(NSUInteger)ruleCountForKey:(NSString*)key
+{
+    //sync
+    @synchronized(self)
+    {
+        return [self.rules[key][KEY_RULES] count];
+    }
+}
+
+//add an (external) path to an item's paths
+-(void)addPath:(NSString*)path forKey:(NSString*)key
+{
+    //sync
+    @synchronized(self)
+    {
+        [self.rules[key][KEY_PATHS] addObject:path];
+    }
+
     return;
 }
 
