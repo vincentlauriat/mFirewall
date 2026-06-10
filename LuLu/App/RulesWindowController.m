@@ -248,6 +248,9 @@ extern XPCDaemonClient* xpcDaemonClient;
             {
                 //hide overlay
                 self.loadingRules.hidden = YES;
+                
+                //stop spinner
+                [self.loadingRulesSpinner stopAnimation:nil];
             }
             
             //update ui
@@ -1675,6 +1678,15 @@ bail:
 {
     //cleanup any expired/temp rules
     [xpcDaemonClient cleanupRules:NO];
+    
+    //remove observer
+    if(self.rulesObserver) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self.rulesObserver];
+        self.rulesObserver = nil;
+    }
+    
+    //make sure spinner is stopped
+    [self.loadingRulesSpinner stopAnimation:nil];
     
     //wait a bit, then set activation policy
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
