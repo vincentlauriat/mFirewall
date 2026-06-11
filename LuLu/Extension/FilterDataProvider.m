@@ -933,10 +933,11 @@ bail:
     //dbg msg
     os_log_debug(logHandle, "created alert...");
 
-    //weak ref to self to break retain cycle:
+    //weak refs to break retain cycle:
     // block → self → context → _socketFlows → flow → savedMessageHandler → block
-    // (the reply block no longer captures the flow; the primary flow is tracked via relatedFlows)
+    // (weakFlow is only used for the 'once' case, to resume the specific alerted flow)
     __weak typeof(self) weakSelf = self;
+    __weak NEFilterSocketFlow* weakFlow = flow;
 
     //deliver alert
     // and process user response
@@ -944,25 +945,44 @@ bail:
     {
         //re-strengthen to avoid races within the block
         __strong typeof(weakSelf) strongSelf = weakSelf;
+        __strong NEFilterSocketFlow* strongFlow = weakFlow;
 
         //log msg
         // note, this msg persists in log
         os_log(logHandle, "(user) response: \"%@\" for %{public}@, that was trying to connect to %{public}@:%{public}@", (RULE_STATE_BLOCK == [alert[KEY_ACTION] unsignedIntValue]) ? @"block" : @"allow", alert[KEY_PATH], alert[KEY_ENDPOINT_ADDR], alert[KEY_ENDPOINT_PORT]);
 
-        //init rule (from user's response)
-        rule = [[Rule alloc] init:alert];
+        //'once'? no rule created
+        // apply the user's verdict to just this (alerted) flow; the next flow will re-prompt
+        if(YES == [alert[KEY_DURATION_ONCE] boolValue])
+        {
+            //verdict from user's action
+            NEFilterNewFlowVerdict* verdict = (RULE_STATE_BLOCK == [alert[KEY_ACTION] unsignedIntValue])
+                ? [NEFilterNewFlowVerdict dropVerdict]
+                : [NEFilterNewFlowVerdict allowVerdict];
 
-        //add / save
-        [rules add:rule save:![rule isTemporary]];
+            //resume this (alerted) flow, & pull it from the queue so it isn't re-processed below
+            [strongSelf resumeFlow:strongFlow withVerdict:verdict];
+            [strongSelf removeRelatedFlow:strongFlow forKey:alert[KEY_KEY]];
+        }
+        //otherwise create a rule (from user's response)
+        else
+        {
+            //init rule
+            rule = [[Rule alloc] init:alert];
+
+            //add / save
+            [rules add:rule save:![rule isTemporary]];
+
+            //tell user rules changed
+            [alerts.xpcUserClient rulesChanged];
+        }
 
         //remove from 'shown'
         [alerts removeShown:alert[KEY_KEY]];
 
-        //tell user rules changed
-        [alerts.xpcUserClient rulesChanged];
-
-        //process all paused flows for this process (incl. the primary/alerted flow)
-        // each re-evaluates against the just-created rule and is resumed accordingly
+        //process remaining paused flows for this process
+        // rule path: each re-evaluates against the new rule & is resumed
+        // 'once' path: the next flow finds no rule -> generates its own alert
         [strongSelf processRelatedFlow:alert[KEY_KEY]];
     }])
     {
@@ -1120,13 +1140,14 @@ bail:
     return;
 }
 
-//reap flows whose process has terminated
-// a process can exit while its alert is pending; its paused flows would otherwise be held (leaked) forever
+//reap artifacts of terminated processes
+// 1. paused flows held for a process that exited (would otherwise be held/leaked forever)
+// 2. temporary ('while process runs') rules whose process exited, plus any expired rules
 -(void)reapDeadFlows
 {
     //dbg msg
     os_log_debug(logHandle, "cleaning up flows from terminated processes...");
-    
+
     //sync
     @synchronized(self.relatedFlows)
     {
@@ -1155,6 +1176,14 @@ bail:
 
         //dbg msg
         os_log(logHandle, "related flows remaining: %lu key(s)", (unsigned long)self.relatedFlows.count);
+    }
+
+    //also clean up rules whose process has exited (temp/process rules) or that have expired
+    // note: cleanup persists to disk; notify the UI if anything was removed (temp rules show in the rules window)
+    if(0 != [rules cleanup:NO])
+    {
+        //rules changed
+        [alerts.xpcUserClient rulesChanged];
     }
 
     return;

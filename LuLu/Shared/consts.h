@@ -315,6 +315,7 @@ enum Signer{None, Apple, AppStore, DevID, AdHoc};
 #define KEY_ACTION @"action"
 #define KEY_DURATION_PROCESS @"durationProcess"
 #define KEY_DURATION_EXPIRATION @"durationExpiration"
+#define KEY_DURATION_ONCE @"durationOnce"
 
 #define KEY_ENDPOINT_ADDR @"endpointAddr"
 #define KEY_ENDPOINT_PORT @"endpointPort"
