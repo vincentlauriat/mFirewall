@@ -25,6 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 //modification time
 @property(nonatomic, retain)NSDate* lastModified;
 
+//timer to (re)load a remote list daily
+// note: a single repeating source, so reloads don't stack
+@property(nonatomic, strong)dispatch_source_t reloadTimer;
+
 
 /* METHODS */
 

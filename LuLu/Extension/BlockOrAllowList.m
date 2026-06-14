@@ -80,6 +80,16 @@ bail:
     return shouldReload;
 }
 
+//stop the daily (remote) reload timer, if any
+-(void)stopReloadTimer
+{
+    if(nil != self.reloadTimer)
+    {
+        dispatch_source_cancel(self.reloadTimer);
+        self.reloadTimer = nil;
+    }
+}
+
 //(re)load
 -(void)load:(NSString*)path
 {
@@ -107,7 +117,10 @@ bail:
     {
         //dbg msg
         os_log_debug(logHandle, "no list specified...");
-        
+
+        //no remote list -> stop any reload timer
+        [self stopReloadTimer];
+
         //bail
         goto bail;
     }
@@ -125,21 +138,31 @@ bail:
         {
             //err msg
             os_log_error(logHandle, "ERROR: failed to (re)load (remote) list, %{public}@ (error: %{public}@)", self.path, error);
-            
+
             //bail
             goto bail;
         }
-        
-        //(re)load remote URL once a day
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(24 * 60 * 60 * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-            
-            //dbg msg
-            os_log_debug(logHandle, "(re)loading (remote) list");
-            
-            //(re)load
-            [self load:self.path];
-            
-        });
+
+        //arm the daily (re)load timer, just once
+        // a single repeating source - so reloads don't stack on each load:
+        if(nil == self.reloadTimer)
+        {
+            //weak self, to avoid pinning this object via the (forever-repeating) timer
+            __weak typeof(self) weakSelf = self;
+
+            //create + schedule (first fire in 24h, then every 24h)
+            self.reloadTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0));
+            dispatch_source_set_timer(self.reloadTimer, dispatch_time(DISPATCH_TIME_NOW, (int64_t)(24 * 60 * 60 * NSEC_PER_SEC)), (uint64_t)(24 * 60 * 60 * NSEC_PER_SEC), (uint64_t)(60 * 60 * NSEC_PER_SEC));
+            dispatch_source_set_event_handler(self.reloadTimer, ^{
+
+                //dbg msg
+                os_log_debug(logHandle, "(re)loading (remote) list");
+
+                //(re)load (current path)
+                [weakSelf load:weakSelf.path];
+            });
+            dispatch_resume(self.reloadTimer);
+        }
     }
     
     //local file
@@ -148,7 +171,10 @@ bail:
     {
         //dbg msg
         os_log_debug(logHandle, "(re)loading (local) list, %{public}@", self.path);
-            
+
+        //local (not remote) -> stop any reload timer
+        [self stopReloadTimer];
+
         //(re)load
         list = [NSString stringWithContentsOfFile:self.path encoding:NSUTF8StringEncoding error:&error];
         if(nil != error)
