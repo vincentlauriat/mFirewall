@@ -186,7 +186,7 @@ extern os_log_t logHandle;
     os_log_debug(logHandle, "client code signing flags: %#x", csFlags);
     
     //gotta have hardened runtime
-    if( !(CS_VALID & csFlags) &&
+    if( !(CS_VALID & csFlags) ||
         !(CS_RUNTIME & csFlags) )
     {
         //err msg

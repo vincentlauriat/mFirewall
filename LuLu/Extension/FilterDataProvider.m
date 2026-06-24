@@ -182,6 +182,9 @@ extern BlockOrAllowList* blockList;
         self.reapTimer = nil;
     }
 
+    //resume (allow) any still held/paused flows
+    [self resumeFlowsForKey:nil verdict:[NEFilterNewFlowVerdict allowVerdict]];
+
     //required
     completionHandler();
     
