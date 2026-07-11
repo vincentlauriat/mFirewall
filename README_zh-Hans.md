@@ -1,19 +1,11 @@
-# LuLu
+# mFirewall
 
 [English](README.md) | [正體中文](README_zh-Hant.md)
 
-LuLu 是免费的开源 macOS 防火墙：
-
-<p align="center"><img src="https://objective-see.com/images/LL/alert.png"></p>
+mFirewall 是免费的开源 macOS 防火墙，用于监控并阻止未经授权的传出网络连接。
 
 **文档：** \
-可[在此处](https://objective-see.com/products/lulu.html)找到完整的详细信息和使用说明。
+完整的安装、使用说明和常见问题请参阅[用户指南](docs/USAGE.md)（英文），也发布于 <https://lauriat.fr/outils/mfirewall>。
 
-**支持：** \
-&#x2764;&nbsp; 喜欢这个产品并想支持它？请查看我的 [patreon 页面](https://www.patreon.com/objective_see).
-
-<p align="center">
-<a class="inlineLink" href="https://www.patreon.com/objective_see">
-		<img src="https://objective-see.com/patreon/images/patreon.jpg" width="700" style="display:block; margin:auto;"/>
-</a>
-</p>
+**来源与许可：** \
+mFirewall 是 [Objective-See](https://objective-see.org) 的 [LuLu](https://github.com/objective-see/LuLu) 项目的分支/重命名版本，原作者为 Patrick Wardle。与上游项目一样，mFirewall 采用 [GNU General Public License v3](LICENSE.md) 许可协议。
