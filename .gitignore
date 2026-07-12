@@ -44,3 +44,10 @@ mFirewall/Binaries/
 
 # oh-my-claudecode tool state
 .omc/
+
+# session doc files (per CLAUDE.md doc-maintenance rule)
+COMMANDS.md
+MEMORY.md
+CHANGES.md
+TODOS.md
+PLAN.md

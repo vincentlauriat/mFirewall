@@ -17,7 +17,7 @@ xcodebuild -workspace mfirewall.xcworkspace -scheme mFirewall -configuration Deb
 xcodebuild -workspace mfirewall.xcworkspace -scheme Extension -configuration Debug build
 ```
 
-Only two schemes are checked in (`mFirewall`, `Extension`) — there is a third `TestExtension` target in `project.pbxproj` but no scheme for it, so it isn't normally built. `MACOSX_DEPLOYMENT_TARGET` is set to `10.15`; on a toolchain whose SDK no longer supports that floor (e.g. an Xcode-beta targeting a much newer minimum), override it for local iteration: `MACOSX_DEPLOYMENT_TARGET=12.0`.
+Only two schemes are checked in (`mFirewall`, `Extension`) — there is a third `TestExtension` target in `project.pbxproj` but no scheme for it, so it isn't normally built. `MACOSX_DEPLOYMENT_TARGET` is `26.0` (raised from `10.15` as part of the Liquid Glass UX rework — a deliberate product decision that drops support for macOS <26), which also happens to match what the Xcode-beta SDK on this machine requires; no manual override needed for local builds.
 
 The App target copies `Binaries/Netiquette.app` into the built app as a resource; that binary is not checked into this repo (`mFirewall/Binaries/` is gitignored — same as upstream), so a resource-copy build step will fail until it's placed there manually. This is a pre-existing repo characteristic, not specific to this fork.
 
@@ -81,3 +81,4 @@ The full user guide (installation, alerts, rules, settings, profiles, FAQ) lives
 - `StatusBarItem.m`'s Netiquette launch code still passes the literal `-lulu` argument — that's a hardcoded flag the external `Netiquette.app` binary (a separate Objective-See tool, not part of this repo) expects; changing it would break that integration.
 - `mFirewall.xcodeproj`'s `Extension.xcscheme` still has a pre-existing (pre-rename) build entry referencing `container:../Uninstaller/Uninstaller.xcodeproj`, a sibling project not present in this repo.
 - `ORGANIZATIONNAME` in `project.pbxproj` is still `Objective-See` (used for new-file header boilerplate in Xcode); GPL copyright/authorship headers on existing files were intentionally left untouched.
+- The `mFirewallText` image asset (used in `Welcome.xib`, `AboutWindow.xib`, `Rules.xib`) was renamed from its LuLu-era slot but its bitmap content was never redrawn — it still visually renders the "LuLu" wordmark. The static onboarding help screenshots embedded in `Welcome.xib` (illustrating the "System Extension Blocked" / "would like to filter network content" system dialogs) likewise still show "LuLu" in the captured dialogs. Needs new artwork/screenshots, not a code fix.

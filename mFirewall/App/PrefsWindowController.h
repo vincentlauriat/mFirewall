@@ -63,6 +63,15 @@
 //passive mode rules ...create, or not?
 @property (weak) IBOutlet NSPopUpButton* passiveModeRules;
 
+//card wrapping the passive mode action/rules controls
+@property (weak) IBOutlet NSVisualEffectView* modeSettingsCard;
+
+//segmented "pill" control mirroring 'passiveModeAction' (Allowed/Blocked)
+@property (strong) NSSegmentedControl* passiveModeActionSegmented;
+
+//segmented "pill" control mirroring 'passiveModeRules' (No/Yes)
+@property (strong) NSSegmentedControl* passiveModeRulesSegmented;
+
 //(block/allow) lists view
 @property (strong) IBOutlet NSView *listsView;
 

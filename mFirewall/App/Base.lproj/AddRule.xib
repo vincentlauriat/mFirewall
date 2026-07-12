@@ -35,7 +35,7 @@
                         <rect key="frame" x="103" y="52" width="69" height="16"/>
                         <buttonCell key="cell" type="radio" title=" Block" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="JJl-Lz-apr">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" size="13" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="radioButtonsHandler:" target="-2" id="liR-62-kN9"/>
@@ -45,7 +45,7 @@
                         <rect key="frame" x="402" y="219" width="86" height="21"/>
                         <buttonCell key="cell" type="push" title="Browse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OoX-aE-Hgf">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" size="13" metaFont="system"/>
                         </buttonCell>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="2tj-XI-LkF"/>
@@ -61,7 +61,7 @@
                             <constraint firstAttribute="height" constant="24" id="mOR-Su-gK2"/>
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Bon-iR-8FO">
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" size="13" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -73,7 +73,7 @@
                             <constraint firstAttribute="width" constant="385" id="XgJ-Ba-s1A"/>
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Program path" id="tc1-pS-Wns">
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" size="13" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -84,7 +84,7 @@
                             <constraint firstAttribute="height" constant="24" id="azV-rq-4Id"/>
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="*" drawsBackground="YES" id="QWe-2U-lfn">
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" size="13" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -92,7 +92,7 @@
                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="wLJ-6S-WeA">
                         <rect key="frame" x="101" y="167" width="169" height="15"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Remote address/domain" id="7yf-wW-FZC">
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" size="13" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -103,7 +103,7 @@
                             <constraint firstAttribute="height" constant="24" id="rzM-Fb-Vh0"/>
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="*" drawsBackground="YES" id="kXW-Xv-Fc4">
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" size="13" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -115,7 +115,7 @@
                             <constraint firstAttribute="height" constant="17" id="o6F-EB-EIp"/>
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Remote port" id="5ic-Om-d8g">
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" size="13" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -132,7 +132,7 @@
                         <rect key="frame" x="294" y="20" width="86" height="21"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fX0-Jq-Okq">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" size="13" metaFont="system"/>
                             <string key="keyEquivalent" base64-UTF8="YES">
 Gw
 </string>
@@ -149,7 +149,7 @@ Gw
                         <rect key="frame" x="402" y="20" width="86" height="21"/>
                         <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="V5P-DF-wCP">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" size="13" name="Menlo-Bold"/>
+                            <font key="font" size="13" metaFont="systemBold"/>
                             <string key="keyEquivalent" base64-UTF8="YES">
 Gw
 </string>
@@ -166,14 +166,14 @@ Gw
                         <rect key="frame" x="281" y="167" width="65" height="15"/>
                         <buttonCell key="cell" type="check" title="regex?" bezelStyle="regularSquare" imagePosition="left" controlSize="small" scrollable="YES" lineBreakMode="clipping" inset="2" id="FCA-Cv-yT3">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" size="13" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <button tag="1" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LyI-TV-Syi">
                         <rect key="frame" x="188" y="52" width="69" height="16"/>
                         <buttonCell key="cell" type="radio" title=" Allow" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="oCK-aR-Ek4">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" size="13" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="radioButtonsHandler:" target="-2" id="Si1-r7-F3A"/>

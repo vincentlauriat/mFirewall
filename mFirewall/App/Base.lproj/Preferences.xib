@@ -13,6 +13,7 @@
                 <outlet property="blockList" destination="n5J-8K-UDy" id="BmA-b5-ppb"/>
                 <outlet property="continueProfileButton" destination="2Fu-cv-a4Y" id="IS9-K8-Lxt"/>
                 <outlet property="listsView" destination="Nkz-5s-cqG" id="Ji5-bu-0Vr"/>
+                <outlet property="modeSettingsCard" destination="9ri-c7-k9x" id="MI7-nX-0Es"/>
                 <outlet property="modesView" destination="K6i-xr-27e" id="DOb-L3-eeR"/>
                 <outlet property="passiveModeAction" destination="CBy-MH-fsc" id="EwM-q6-3ff"/>
                 <outlet property="passiveModeRules" destination="24D-f1-OZB" id="PdK-Ez-f7h"/>
@@ -118,7 +119,7 @@
                     <rect key="frame" x="72" y="375" width="510" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Allow Apple Programs" id="Shu-Wz-4ax">
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -127,7 +128,7 @@
                     <rect key="frame" x="72" y="350" width="508" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Outgoing connections from Apple-signed programs will be allowed." id="M8X-n4-v2d">
-                        <font key="font" size="11" name="Menlo-Regular"/>
+                        <font key="font" size="11" metaFont="system"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -147,7 +148,7 @@
                     <rect key="frame" x="72" y="322" width="508" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Allow Already Installed Programs" id="jvT-uI-uNq">
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -156,7 +157,7 @@
                     <rect key="frame" x="72" y="297" width="567" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Outgoing connections from currently installed 3rd-party programs will be allowed." id="6gH-HW-CFe">
-                        <font key="font" size="11" name="Menlo-Regular"/>
+                        <font key="font" size="11" metaFont="system"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -176,7 +177,7 @@
                     <rect key="frame" x="72" y="163" width="508" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Allow Simulator Programs" id="Uqq-dW-xf2">
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -185,7 +186,7 @@
                     <rect key="frame" x="72" y="138" width="554" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Outgoing connections from programs running in the (iOS) simulator will be allowed." id="e6s-dd-HG6">
-                        <font key="font" size="11" name="Menlo-Regular"/>
+                        <font key="font" size="11" metaFont="system"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -205,7 +206,7 @@
                     <rect key="frame" x="72" y="269" width="510" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Allow DNS Traffic" id="wED-Z0-197">
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -214,7 +215,7 @@
                     <rect key="frame" x="72" y="244" width="508" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="All outgoing UDP traffic on port 53 will be allowed." id="iYm-DO-gHs">
-                        <font key="font" size="11" name="Menlo-Regular"/>
+                        <font key="font" size="11" metaFont="system"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -234,7 +235,7 @@
                     <rect key="frame" x="70" y="216" width="510" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Allow Localhost Traffic" id="F6g-hE-DiK">
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -243,7 +244,7 @@
                     <rect key="frame" x="70" y="191" width="508" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Outgoing connections to localhost will be allowed." id="caA-Ec-ysj">
-                        <font key="font" size="11" name="Menlo-Regular"/>
+                        <font key="font" size="11" metaFont="system"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -253,7 +254,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="View Rules" bezelStyle="rounded" alignment="center" controlSize="large" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Cfj-2E-dIA">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="16" name="Menlo-Bold"/>
+                        <font key="font" size="16" metaFont="systemBold"/>
                     </buttonCell>
                     <connections>
                         <action selector="viewRules:" target="-2" id="PDE-gg-qGI"/>
@@ -281,7 +282,7 @@
                     <rect key="frame" x="72" y="331" width="510" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Passive Mode" id="JVI-Or-h0u">
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -301,7 +302,7 @@
                     <rect key="frame" x="72" y="174" width="510" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Block Mode" id="4EN-j2-enV">
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -310,7 +311,7 @@
                     <rect key="frame" x="72" y="149" width="510" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="All traffic routed thru mFirewall will be blocked (unless the endpoint is explicitly on the 'Allow' list)." id="SG5-YM-BoV">
-                        <font key="font" size="11" name="Menlo-Regular"/>
+                        <font key="font" size="11" metaFont="system"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -330,7 +331,7 @@
                     <rect key="frame" x="72" y="108" width="510" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="No Icon Mode" id="iOJ-Bc-hxG">
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -339,7 +340,7 @@
                     <rect key="frame" x="72" y="84" width="510" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Run without showing an icon in the status menu bar." id="bYB-s1-S3f">
-                        <font key="font" size="11" name="Menlo-Regular"/>
+                        <font key="font" size="11" metaFont="system"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -348,95 +349,89 @@
                     <rect key="frame" x="72" y="319" width="510" height="13"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Silently run without alerts, applying existing rules." id="E0T-Ug-P8f">
-                        <font key="font" size="11" name="Menlo-Regular"/>
+                        <font key="font" size="11" metaFont="system"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <box titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="9ri-c7-k9x">
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="9ri-c7-k9x" userLabel="Mode Settings Card" customClass="NSVisualEffectView">
                     <rect key="frame" x="74" y="227" width="506" height="86"/>
-                    <view key="contentView" id="7g5-qR-YSr">
-                        <rect key="frame" x="0.0" y="0.0" width="506" height="86"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <popUpButton springLoaded="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CBy-MH-fsc">
-                                <rect key="frame" x="397" y="55" width="96" height="20"/>
-                                <popUpButtonCell key="cell" type="push" title="Allowed" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="CqC-4v-5d3" id="ssl-E3-3tL">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="11" name="Menlo-Regular"/>
-                                    <menu key="menu" id="Ned-2Z-nv8">
-                                        <items>
-                                            <menuItem title="Allowed" state="on" id="CqC-4v-5d3">
-                                                <modifierMask key="keyEquivalentModifierMask"/>
-                                            </menuItem>
-                                            <menuItem title="Blocked" id="mCn-AV-g9h">
-                                                <modifierMask key="keyEquivalentModifierMask"/>
-                                            </menuItem>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="TM7-bg-q1n"/>
-                                    <constraint firstAttribute="width" constant="96" id="oYr-vD-9fC"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="togglePreference:" target="-2" id="4on-EY-CRn"/>
-                                </connections>
-                            </popUpButton>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="471" translatesAutoresizingMaskIntoConstraints="NO" id="t22-Z1-Pfw">
-                                <rect key="frame" x="12" y="52" width="370" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="New connections should be be:" id="GsR-9d-5N8">
-                                    <font key="font" size="11" name="Menlo-Regular"/>
-                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="471" translatesAutoresizingMaskIntoConstraints="NO" id="7Lm-Wv-aXo">
-                                <rect key="frame" x="12" y="20" width="396" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Rules for new connections should be created?" id="5Wo-JL-Khb">
-                                    <font key="font" size="11" name="Menlo-Regular"/>
-                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <popUpButton springLoaded="YES" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="24D-f1-OZB">
-                                <rect key="frame" x="397" y="13" width="96" height="25"/>
-                                <popUpButtonCell key="cell" type="push" title="No" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="JwN-0v-5Uh" id="yFL-Lw-hGA">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="11" name="Menlo-Regular"/>
-                                    <menu key="menu" id="MzQ-EA-xSp">
-                                        <items>
-                                            <menuItem title="No" state="on" id="JwN-0v-5Uh">
-                                                <modifierMask key="keyEquivalentModifierMask"/>
-                                            </menuItem>
-                                            <menuItem title="Yes" id="e5A-iH-fS4">
-                                                <modifierMask key="keyEquivalentModifierMask"/>
-                                            </menuItem>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="VxS-g2-40h"/>
-                                    <constraint firstAttribute="height" constant="20" id="sZI-by-YWT"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="togglePreference:" target="-2" id="mIe-8k-8HD"/>
-                                </connections>
-                            </popUpButton>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="CBy-MH-fsc" secondAttribute="trailing" constant="13" id="j7q-cS-CZ7"/>
-                            <constraint firstItem="CBy-MH-fsc" firstAttribute="top" secondItem="7g5-qR-YSr" secondAttribute="top" constant="11" id="rM8-Yl-CCl"/>
-                            <constraint firstAttribute="trailing" secondItem="24D-f1-OZB" secondAttribute="trailing" constant="13" id="vcN-1H-Azb"/>
-                        </constraints>
-                    </view>
+                    <subviews>
+                        <popUpButton springLoaded="YES" verticalHuggingPriority="750" hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CBy-MH-fsc">
+                            <rect key="frame" x="397" y="55" width="96" height="20"/>
+                            <popUpButtonCell key="cell" type="push" title="Allowed" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="CqC-4v-5d3" id="ssl-E3-3tL">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" size="11" metaFont="system"/>
+                                <menu key="menu" id="Ned-2Z-nv8">
+                                    <items>
+                                        <menuItem title="Allowed" state="on" id="CqC-4v-5d3">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Blocked" id="mCn-AV-g9h">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="TM7-bg-q1n"/>
+                                <constraint firstAttribute="width" constant="96" id="oYr-vD-9fC"/>
+                            </constraints>
+                            <connections>
+                                <action selector="togglePreference:" target="-2" id="4on-EY-CRn"/>
+                            </connections>
+                        </popUpButton>
+                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="471" translatesAutoresizingMaskIntoConstraints="NO" id="t22-Z1-Pfw">
+                            <rect key="frame" x="12" y="52" width="370" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="New connections should be be:" id="GsR-9d-5N8">
+                                <font key="font" size="11" metaFont="system"/>
+                                <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="471" translatesAutoresizingMaskIntoConstraints="NO" id="7Lm-Wv-aXo">
+                            <rect key="frame" x="12" y="20" width="396" height="14"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Rules for new connections should be created?" id="5Wo-JL-Khb">
+                                <font key="font" size="11" metaFont="system"/>
+                                <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <popUpButton springLoaded="YES" verticalHuggingPriority="750" hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="24D-f1-OZB">
+                            <rect key="frame" x="397" y="13" width="96" height="25"/>
+                            <popUpButtonCell key="cell" type="push" title="No" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="JwN-0v-5Uh" id="yFL-Lw-hGA">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" size="11" metaFont="system"/>
+                                <menu key="menu" id="MzQ-EA-xSp">
+                                    <items>
+                                        <menuItem title="No" state="on" id="JwN-0v-5Uh">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Yes" id="e5A-iH-fS4">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="96" id="VxS-g2-40h"/>
+                                <constraint firstAttribute="height" constant="20" id="sZI-by-YWT"/>
+                            </constraints>
+                            <connections>
+                                <action selector="togglePreference:" target="-2" id="mIe-8k-8HD"/>
+                            </connections>
+                        </popUpButton>
+                    </subviews>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="CBy-MH-fsc" secondAttribute="trailing" constant="13" id="j7q-cS-CZ7"/>
+                        <constraint firstItem="CBy-MH-fsc" firstAttribute="top" secondItem="9ri-c7-k9x" secondAttribute="top" constant="11" id="rM8-Yl-CCl"/>
+                        <constraint firstAttribute="trailing" secondItem="24D-f1-OZB" secondAttribute="trailing" constant="13" id="vcN-1H-Azb"/>
                         <constraint firstAttribute="height" constant="86" id="rme-hY-C3n"/>
                         <constraint firstAttribute="width" constant="506" id="vMB-pD-F2d"/>
                     </constraints>
-                </box>
+                </customView>
                 <button tag="9" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Y6-5k-ubb">
                     <rect key="frame" x="39" y="56" width="29" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -452,7 +447,7 @@
                     <rect key="frame" x="72" y="54" width="510" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="No VirusTotal Mode" id="wka-xk-z2g">
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -461,7 +456,7 @@
                     <rect key="frame" x="72" y="41" width="510" height="14"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Disable integration with VirusTotal." id="XTD-vf-hNE">
-                        <font key="font" size="11" name="Menlo-Regular"/>
+                        <font key="font" size="11" metaFont="system"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -493,7 +488,7 @@
                     <rect key="frame" x="72" y="307" width="510" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Allow List:" id="FE3-Li-d3K">
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -503,7 +498,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Browse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fut-ad-zCW">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                     </buttonCell>
                     <connections>
                         <action selector="selectBlockOrAllowList:" target="-2" id="vJp-rf-wVE"/>
@@ -513,7 +508,7 @@
                     <rect key="frame" x="74" y="260" width="360" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="jch-z4-HaH">
-                        <font key="font" size="13" name="Menlo-Regular"/>
+                        <font key="font" size="13" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -525,7 +520,7 @@
                     <rect key="frame" x="72" y="283" width="510" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Local or remote file, containing endpoints to always allow." id="7iJ-xR-xDI">
-                        <font key="font" size="11" name="Menlo-Regular"/>
+                        <font key="font" size="11" metaFont="system"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -545,7 +540,7 @@
                     <rect key="frame" x="72" y="204" width="510" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Block List:" id="Emd-wS-UQh">
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -554,7 +549,7 @@
                     <rect key="frame" x="74" y="157" width="360" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="cOM-J9-h2z">
-                        <font key="font" size="13" name="Menlo-Regular"/>
+                        <font key="font" size="13" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -566,7 +561,7 @@
                     <rect key="frame" x="72" y="180" width="510" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Local or remote file, containing endpoints to always block." id="Bdp-Z8-BhB">
-                        <font key="font" size="11" name="Menlo-Regular"/>
+                        <font key="font" size="11" metaFont="system"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -582,7 +577,7 @@
                                 <rect key="frame" x="18" y="20" width="572" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="justified" id="6vU-GO-opk">
-                                    <font key="font" size="11" name="Menlo-Regular"/>
+                                    <font key="font" size="11" metaFont="system"/>
                                     <string key="title">Note: When a new connection is made, sometimes only the IP address may be available. In such cases, domains on the allow or block list cannot be matched, which may impact whether a request is blocked or allowed.</string>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -596,7 +591,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Browse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="W6X-IU-31r">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                     </buttonCell>
                     <connections>
                         <action selector="selectBlockOrAllowList:" target="-2" id="M7o-ZO-hj3"/>
@@ -624,7 +619,7 @@
                     <rect key="frame" x="72" y="160" width="510" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Disable Update Checks" id="z5b-fA-WCk">
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -633,7 +628,7 @@
                     <rect key="frame" x="72" y="135" width="510" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Do not automatically check for new versions." id="JV5-cY-ff4">
-                        <font key="font" size="11" name="Menlo-Regular"/>
+                        <font key="font" size="11" metaFont="system"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -642,7 +637,7 @@
                     <rect key="frame" x="18" y="20" width="614" height="47"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="5gt-xh-Ti5">
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -656,7 +651,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Check Now" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2qr-2x-A3U">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                     </buttonCell>
                     <connections>
                         <action selector="check4Update:" target="-2" id="GJb-mB-UIz"/>
@@ -783,7 +778,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Add Profile" bezelStyle="rounded" alignment="center" controlSize="large" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ICK-Xr-yt1">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="12" name="Menlo-Bold"/>
+                        <font key="font" size="12" metaFont="systemBold"/>
                     </buttonCell>
                     <connections>
                         <action selector="addProfile:" target="-2" id="UPM-Mu-xbx"/>
@@ -800,7 +795,7 @@
                                 <rect key="frame" x="18" y="10" width="522" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="justified" id="7vn-ff-PJk">
-                                    <font key="font" size="11" name="Menlo-Regular"/>
+                                    <font key="font" size="11" metaFont="system"/>
                                     <string key="title">Note: A profile defines a set of rules and settings. Once activated, its settings apply mFirewall-wide (and can be modified via mFirewall's Settings panes). Any new rules will be added only to that profile's ruleset.</string>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -877,7 +872,7 @@ Gw
                                 <rect key="frame" x="18" y="11" width="522" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="justified" id="d79-kw-Ala">
-                                    <font key="font" size="11" name="Menlo-Regular"/>
+                                    <font key="font" size="11" metaFont="system"/>
                                     <string key="title">First create a name for your profile. 
 
 Then click "Next" to configure the settings for your new profile.</string>
@@ -892,7 +887,7 @@ Then click "Next" to configure the settings for your new profile.</string>
                     <rect key="frame" x="43" y="43" width="184" height="15"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Profile Name:" id="kZA-kY-nGm">
-                        <font key="font" size="13" name="Menlo-Bold"/>
+                        <font key="font" size="13" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
