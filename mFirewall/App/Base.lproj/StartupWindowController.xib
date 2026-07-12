@@ -17,7 +17,7 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
-            <windowStyleMask key="styleMask" texturedBackground="YES"/>
+            <windowStyleMask key="styleMask"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="523" height="280"/>
             <rect key="screenRect" x="0.0" y="0.0" width="3440" height="1415"/>
@@ -52,7 +52,7 @@
                         <rect key="frame" x="18" y="25" width="487" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" allowsUndo="NO" alignment="center" title="Note: mFirewall works best on macOS 15.3+, as Apple fixed bugs affecting network stability. " id="XsZ-6a-7Rk">
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" size="13" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>

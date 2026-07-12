@@ -37,15 +37,7 @@ extern os_log_t logHandle;
     
     //super
     [super windowDidLoad];
-    
-    //not in dark mode?
-    // make window white
-    if(YES != isDarkMode())
-    {
-        //make white
-        self.window.backgroundColor = NSColor.whiteColor;
-    }
-    
+
     //when supported
     // indicate title bar is transparent (too)
     if(YES == [self.window respondsToSelector:@selector(titlebarAppearsTransparent)])
@@ -170,13 +162,13 @@ extern os_log_t logHandle;
                     {
                         //err msg
                         os_log_error(logHandle, "ERROR: failed to activate system extension");
-                        
+
                         //show alert/exit on main thread
                         dispatch_async(dispatch_get_main_queue(),
                         ^{
                             //show alert
                             showAlert(NSAlertStyleCritical, NSLocalizedString(@"ERROR: activation failed", @"ERROR: activation failed"), NSLocalizedString(@"failed to activate system extension", @"failed to activate system extension"), @[NSLocalizedString(@"OK", @"OK")]);
-                            
+
                             //bye
                             [NSApplication.sharedApplication terminate:self];
                         });
@@ -197,13 +189,13 @@ extern os_log_t logHandle;
                     {
                         //err msg
                         os_log_error(logHandle, "ERROR: failed to activate network extension");
-                        
+
                         //show alert/exit on main thread
                         dispatch_async(dispatch_get_main_queue(),
                         ^{
                             //show alert
                             showAlert(NSAlertStyleCritical, NSLocalizedString(@"ERROR: activation failed",@"ERROR: activation failed"), NSLocalizedString(@"failed to activate network extension",@"failed to activate network extension"), @[NSLocalizedString(@"OK", @"OK")]);
-                            
+
                             //bye
                             [NSApplication.sharedApplication terminate:self];
                         });
@@ -310,14 +302,6 @@ extern os_log_t logHandle;
     
     //y position
     CGFloat yPos = 0;
-    
-    //not in dark mode?
-    // make window white
-    if(YES != isDarkMode())
-    {
-        //set white
-        view.layer.backgroundColor = [NSColor whiteColor].CGColor;
-    }
     
     //set content view size
     self.window.contentSize = view.frame.size;

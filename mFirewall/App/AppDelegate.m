@@ -58,7 +58,7 @@ XPCDaemonClient* xpcDaemonClient = nil;
 
     //don't relaunch
     [NSApp disableRelaunchOnLogin];
-    
+
     //v1.0 version installed?
     // prompt / provide link to uninstall instructions / exit
     if(YES == [NSFileManager.defaultManager fileExistsAtPath:[INSTALL_DIRECTORY stringByAppendingPathComponent:@"LuLu.bundle"]])
@@ -207,18 +207,18 @@ XPCDaemonClient* xpcDaemonClient = nil;
                     {
                         //err msg
                         os_log_error(logHandle, "ERROR: failed to activate extension");
-                        
+
                         //show error on main thread
                         dispatch_async(dispatch_get_main_queue(), ^{
-                            
+
                             //show alert
                             showAlert(NSAlertStyleCritical, NSLocalizedString(@"ERROR: activation failed", @"ERROR: activation failed"), NSLocalizedString(@"failed to activate system/network extension", @"failed to activate system/network extension"), @[NSLocalizedString(@"OK", @"OK")]);
-                            
+
                             //exit
                             [NSApplication.sharedApplication terminate:self];
-                            
+
                         });
-                        
+
                         return;
                     }
                     
@@ -231,13 +231,13 @@ XPCDaemonClient* xpcDaemonClient = nil;
                     {
                         //err msg
                         os_log_error(logHandle, "ERROR: failed to activate network filter");
-                        
+
                         //show alert/exit on main thread
                         dispatch_async(dispatch_get_main_queue(),
                         ^{
                             //show alert
                             showAlert(NSAlertStyleCritical, NSLocalizedString(@"ERROR: activation failed", @"ERROR: activation failed"), NSLocalizedString(@"failed to activate network filter",@"failed to activate network filter"), @[NSLocalizedString(@"OK", @"OK")]);
-                            
+
                             //bye
                             [NSApplication.sharedApplication terminate:self];
                         });

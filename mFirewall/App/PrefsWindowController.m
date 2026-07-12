@@ -76,10 +76,119 @@ extern XPCDaemonClient* xpcDaemonClient;
 {
     //set subtitle
     [self setSubTitle];
-    
+
     //get prefs
     self.preferences = [xpcDaemonClient getPreferences];
-    
+
+    //style mode settings card (rounded, translucent material)
+    [self styleModeSettingsCard];
+
+    //replace the passive-mode pop-ups w/ segmented "pill" controls
+    [self stylePassiveModeControls];
+
+    return;
+}
+
+//give the mode settings card rounded corners + a hairline border
+// (NSVisualEffectView doesn't expose these via the XIB, so set in code)
+-(void)styleModeSettingsCard
+{
+    //material
+    self.modeSettingsCard.material = NSVisualEffectMaterialContentBackground;
+
+    //blending
+    self.modeSettingsCard.blendingMode = NSVisualEffectBlendingModeWithinWindow;
+
+    //state
+    self.modeSettingsCard.state = NSVisualEffectStateActive;
+
+    //layer-backed for corner radius/border
+    self.modeSettingsCard.wantsLayer = YES;
+    self.modeSettingsCard.layer.cornerRadius = 14.0;
+    self.modeSettingsCard.layer.masksToBounds = YES;
+    self.modeSettingsCard.layer.borderWidth = 1.0;
+    self.modeSettingsCard.layer.borderColor = [[NSColor.labelColor colorWithAlphaComponent:0.06] CGColor];
+
+    return;
+}
+
+//build the segmented "pill" controls that visually replace the (now hidden)
+// 'passiveModeAction'/'passiveModeRules' pop-up buttons, MacInside-style
+// (the pop-ups stay in the XIB, hidden, and remain the source of truth:
+//  segment taps just mirror the selection onto them and reuse 'togglePreference:' as-is)
+-(void)stylePassiveModeControls
+{
+    //builds one segmented control, positioned/sized like the pop-up it replaces
+    NSSegmentedControl* (^buildSegmentedControl)(NSPopUpButton*) = ^NSSegmentedControl*(NSPopUpButton* popup)
+    {
+        //segmented control
+        NSSegmentedControl* segmented = nil;
+
+        //init w/ same frame as the pop-up it replaces
+        segmented = [[NSSegmentedControl alloc] initWithFrame:popup.frame];
+
+        //pill-shaped, single selection
+        segmented.segmentStyle = NSSegmentStyleCapsule;
+        segmented.trackingMode = NSSegmentSwitchTrackingSelectOne;
+        segmented.segmentCount = popup.itemArray.count;
+
+        //labels
+        // pulled from the pop-up's (already localized) menu items
+        for(NSUInteger i = 0; i < popup.itemArray.count; i++)
+        {
+            [segmented setLabel:popup.itemArray[i].title forSegment:i];
+        }
+
+        //match current selection
+        segmented.selectedSegment = popup.indexOfSelectedItem;
+
+        //wire up
+        segmented.target = self;
+        segmented.action = @selector(passiveModeSegmentChanged:);
+
+        //size to fit labels
+        // ...the pop-up's fixed width was tuned for its (shorter) English labels,
+        //    but localized labels (e.g. French "Autorisé"/"Bloqué") need more room
+        [segmented sizeToFit];
+
+        //re-anchor: keep the same trailing edge + vertical center as the pop-up it replaces
+        NSRect frame = segmented.frame;
+        frame.origin.x = NSMaxX(popup.frame) - frame.size.width;
+        frame.origin.y = NSMidY(popup.frame) - (frame.size.height / 2.0);
+        segmented.frame = frame;
+
+        return segmented;
+    };
+
+    //build 'action' (allowed/blocked) and 'rules' (no/yes) segmented controls
+    self.passiveModeActionSegmented = buildSegmentedControl(self.passiveModeAction);
+    self.passiveModeRulesSegmented = buildSegmentedControl(self.passiveModeRules);
+
+    //add as siblings of the (now hidden) pop-ups, in the same card
+    [self.passiveModeAction.superview addSubview:self.passiveModeActionSegmented];
+    [self.passiveModeRules.superview addSubview:self.passiveModeRulesSegmented];
+
+    return;
+}
+
+//invoked when user taps a passive-mode segmented "pill" control
+-(void)passiveModeSegmentChanged:(NSSegmentedControl*)sender
+{
+    //mirror the segment selection onto the (hidden) pop-up
+    // then reuse the existing 'togglePreference:' logic, unchanged
+    if(YES == [sender isEqualTo:self.passiveModeActionSegmented])
+    {
+        //sync + toggle
+        [self.passiveModeAction selectItemAtIndex:sender.selectedSegment];
+        [self togglePreference:self.passiveModeAction];
+    }
+    else if(YES == [sender isEqualTo:self.passiveModeRulesSegmented])
+    {
+        //sync + toggle
+        [self.passiveModeRules selectItemAtIndex:sender.selectedSegment];
+        [self togglePreference:self.passiveModeRules];
+    }
+
     return;
 }
 
@@ -192,9 +301,11 @@ extern XPCDaemonClient* xpcDaemonClient;
             
             //set 'passive mode' action
             [self.passiveModeAction selectItemAtIndex: [self.preferences[PREF_PASSIVE_MODE_ACTION] integerValue]];
-            
+            self.passiveModeActionSegmented.selectedSegment = self.passiveModeAction.indexOfSelectedItem;
+
             //set 'passive mode' rules
             [self.passiveModeRules selectItemAtIndex: [self.preferences[PREF_PASSIVE_MODE_RULES] integerValue]];
+            self.passiveModeRulesSegmented.selectedSegment = self.passiveModeRules.indexOfSelectedItem;
             
             //set 'block mode' button state
             ((NSButton*)[view viewWithTag:BUTTON_BLOCK_MODE]).state = [self.preferences[PREF_BLOCK_MODE] boolValue];

@@ -67,7 +67,7 @@
                                                         <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" tag="100" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkx-JF-q5i">
                                                             <rect key="frame" x="41" y="20" width="713" height="20"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Item Name" id="7zm-Uo-lwv">
-                                                                <font key="font" size="17" name="Menlo-Bold"/>
+                                                                <font key="font" size="17" metaFont="systemBold"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
@@ -80,7 +80,7 @@
                                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="101" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eh8-4j-zJP">
                                                             <rect key="frame" x="41" y="5" width="713" height="13"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingMiddle" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="item details..." id="qbv-z3-4PI">
-                                                                <font key="font" size="11" name="Menlo-Regular"/>
+                                                                <font key="font" size="11" metaFont="system"/>
                                                                 <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
@@ -108,7 +108,7 @@
                                                         <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpF-QT-jfh">
                                                             <rect key="frame" x="1" y="13" width="753" height="20"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="connection info" id="tZf-9e-yHh">
-                                                                <font key="font" size="17" name="Menlo-Regular"/>
+                                                                <font key="font" size="17" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
@@ -144,7 +144,7 @@
                                                             <rect key="frame" x="35" y="16" width="189" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" id="fZ4-hz-z9B">
-                                                                <font key="font" size="13" name="Menlo-Regular"/>
+                                                                <font key="font" size="13" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
@@ -201,7 +201,7 @@
                             <constraint firstAttribute="height" constant="15" id="eie-Hn-5SE"/>
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Add Rule" id="wLE-Rk-GOf">
-                            <font key="font" size="13" name="Menlo-Bold"/>
+                            <font key="font" size="13" metaFont="systemBold"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -217,7 +217,7 @@
                                 <rect key="frame" x="44" y="44" width="413" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="(re)loading rules..." id="vD6-Bk-elz">
-                                    <font key="font" size="13" name="Menlo-Bold"/>
+                                    <font key="font" size="13" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
